@@ -3,7 +3,9 @@ package com.gimmot.gimmot
 import android.os.Bundle
 import android.support.v7.widget.StaggeredGridLayoutManager
 import com.gimmot.gimmot.adapter.NearbyAdapter
+import com.gimmot.gimmot.utils.AddPhotoBottomDialogFragment
 import kotlinx.android.synthetic.main.activity_nearby.*
+
 
 class NearbyActivity : BaseActivity(0) {
     private val TAG = "NearbyActivity"
@@ -33,5 +35,13 @@ class NearbyActivity : BaseActivity(0) {
         recyclerView.addItemDecoration( SpacesItemDecoration(getResources().getDimensionPixelSize(R.dimen.font_16dp),this));
         recyclerView.setLayoutManager(manager);
         recyclerView.adapter = adapter
+
+        setting_search.setOnClickListener{
+            val addPhotoBottomDialogFragment = AddPhotoBottomDialogFragment().newInstance()
+            addPhotoBottomDialogFragment.show(supportFragmentManager,
+                    "add_photo_dialog_fragment")
+
+        }
+
     }
 }

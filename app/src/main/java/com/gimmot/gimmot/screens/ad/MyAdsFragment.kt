@@ -13,8 +13,7 @@ import kotlinx.android.synthetic.main.fragment_my_ads.*
 
 class MyAdsFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.fragment_my_ads, container, false)
     }
 
