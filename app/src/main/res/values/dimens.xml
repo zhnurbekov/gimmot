@@ -6,6 +6,6 @@
     <dimen name="font_big">20dp</dimen>
     <dimen name="default_padding">2dp</dimen>
     <dimen name="font_30dp">30dp</dimen>
-    <dimen name="font_90dp">90dp</dimen>
+    <dimen name="font_90dp">110dp</dimen>
 
 </resources>
