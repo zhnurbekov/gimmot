@@ -60,6 +60,7 @@ class RegistrationFragment : Fragment() {
             if (valid()) verify()
         }
 
+
         database.child("counrty_phone_code").addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 dataSnapshot.children.forEach({
