@@ -23,7 +23,7 @@
           android:layout_marginLeft="15dp"
           android:text="Люди рядом"
           android:textColor="@color/white"
-          android:fontFamily="@font/roboto_bold"
+          android:fontFamily="@font/pfbeausanspro_bold"
           android:textSize="15sp"
           app:layout_constraintTop_toTopOf="parent"
           app:layout_constraintBottom_toBottomOf="parent"

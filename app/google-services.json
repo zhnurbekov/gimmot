@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "261270182156",
+    "firebase_url": "https://gimmot-2f885.firebaseio.com",
+    "project_id": "gimmot-2f885",
+    "storage_bucket": "gimmot-2f885.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261270182156:android:d9d2760b7b29383a",
+        "android_client_info": {
+          "package_name": "com.gimmot.gimmot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261270182156-qnfiemu0iqcnq1sn74lfdi3lavdj1fim.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.gimmot.gimmot",
+            "certificate_hash": "e4fae230e61ddb2984186f5786f5670d6daabc64"
+          }
+        },
+        {
+          "client_id": "261270182156-c9m4q1n9nv7fv2i1niq14fidovjqr5la.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZBRWD59BKCISfdBjvkwKKMJqfu1_50uQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261270182156-c9m4q1n9nv7fv2i1niq14fidovjqr5la.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

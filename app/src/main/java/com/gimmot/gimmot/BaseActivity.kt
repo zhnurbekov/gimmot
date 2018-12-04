@@ -3,10 +3,13 @@ package com.gimmot.gimmot
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import com.gimmot.gimmot.screens.ad.AdActivity
+import com.gimmot.gimmot.screens.menu.MenuActivity
+import com.gimmot.gimmot.screens.nearby.NearbyActivity
 import kotlinx.android.synthetic.main.bottom_navigation_view.*
 
 
 abstract class BaseActivity(val navNumber: Int) : AppCompatActivity() {
+    private val TAG = BaseActivity::class.java!!.getSimpleName()
 
     fun setupBottomNavigation() {
         bottom_navigation_view.setIconSize(25f, 25f)

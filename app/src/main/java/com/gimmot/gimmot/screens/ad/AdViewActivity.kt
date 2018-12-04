@@ -16,8 +16,7 @@ class AdViewActivity : AppCompatActivity(){
         setContentView(R.layout.activity_add_view)
 
         back_btn.setOnClickListener {
-            val intent = Intent(this, AdActivity::class.java)
-            startActivity(intent)
+          finish()
         }
     }
 }

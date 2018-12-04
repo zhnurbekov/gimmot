@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NearbyActivity">
+        <activity android:name=".screens.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,9 +18,11 @@
         </activity>
         <activity android:name=".screens.ad.AdActivity"/>
         <activity android:name=".MessageActivity"/>
-        <activity android:name=".MenuActivity"/>
+        <activity android:name=".screens.menu.MenuActivity"/>
         <activity android:name=".screens.ad.AdViewActivity"/>
         <activity android:name=".screens.ad.NewAdActivity"/>
+        <activity android:name=".screens.nearby.ChooseCountryActivity"/>
+        <activity android:name=".screens.nearby.NearbyActivity"/>
 
 
     </application>

@@ -1,28 +1,25 @@
-package com.gimmot.gimmot.utils
+package com.gimmot.gimmot.screens.nearby
 
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomSheetDialogFragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import com.gimmot.gimmot.R
-import kotlinx.android.synthetic.main.dialog_search_setup.*
 import kotlinx.android.synthetic.main.dialog_search_setup.view.*
 import com.jaygoo.widget.RangeSeekBar
 import com.jaygoo.widget.OnRangeChangedListener
 import android.support.design.widget.BottomSheetBehavior
 import android.support.design.widget.CoordinatorLayout
-import android.support.annotation.NonNull
 import android.support.annotation.Nullable
+import com.gimmot.gimmot.screens.ad.AdViewActivity
 
 
-class AddPhotoBottomDialogFragment : BottomSheetDialogFragment() {
+class SearchSetupBottomDialogFragment : BottomSheetDialogFragment() {
 
-    fun newInstance(): AddPhotoBottomDialogFragment {
-        return AddPhotoBottomDialogFragment()
+    fun newInstance(): SearchSetupBottomDialogFragment {
+        return SearchSetupBottomDialogFragment()
     }
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
@@ -67,6 +64,11 @@ class AddPhotoBottomDialogFragment : BottomSheetDialogFragment() {
             contentView.show_all.setTextColor(resources.getColor(R.color.black))
             contentView.online_btn.setBackgroundResource(R.drawable.textview_border)
             contentView.online_btn.setTextColor(resources.getColor(R.color.hind))
+        }
+
+        contentView.search_location.setOnClickListener{
+            val intent = Intent(activity, ChooseCountryActivity::class.java)
+            startActivity(intent)
         }
         contentView.age_seekBar.setValue(20f, 70f)
         contentView.age_seekBar.setOnRangeChangedListener(object : OnRangeChangedListener {
@@ -119,11 +121,9 @@ class AddPhotoBottomDialogFragment : BottomSheetDialogFragment() {
                 contentView.size_arg_count.setText(Math.round(leftValue).toString() + " - " + Math.round(rightValue).toString())
 
             }
-
             override fun onStartTrackingTouch(view: RangeSeekBar, isLeft: Boolean) {
                 //start tracking touch
             }
-
             override fun onStopTrackingTouch(view: RangeSeekBar, isLeft: Boolean) {
                 //stop tracking touch
             }
