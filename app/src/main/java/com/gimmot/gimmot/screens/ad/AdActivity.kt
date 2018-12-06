@@ -5,14 +5,18 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import com.gimmot.gimmot.BaseActivity
 import com.gimmot.gimmot.R
+import com.gimmot.gimmot.screens.common.setupAuthGuard
+import com.gimmot.gimmot.screens.common.setupBottomNavigation
 import kotlinx.android.synthetic.main.activity_ad.*
 
-class AdActivity : BaseActivity(1) {
+class AdActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ad)
-        setupBottomNavigation()
+        setupAuthGuard { uid ->
+            setupBottomNavigation(uid, 1)
+        }
         configureTabLayout()
 
     }

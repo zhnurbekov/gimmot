@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.gimmot.gimmot.R
-import com.gimmot.gimmot.model.CountryPhoneCode
+import com.gimmot.gimmot.model.Country
 import kotlinx.android.synthetic.main.country_list_item.view.*
 
 
-class CountryPhoneCodeAdapter (val items : List<CountryPhoneCode>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+class CountryPhoneCodeAdapter (val items : List<Country>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
 
 
     var getCodeListener : ((String, String) -> Unit)? = null
@@ -25,18 +25,21 @@ class CountryPhoneCodeAdapter (val items : List<CountryPhoneCode>, val context: 
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.counrty?.text = items.get(position).country
+        holder?.country?.text = items.get(position).name
         holder?.phone_code?.text = items.get(position).code
         holder!!.item_container.setOnClickListener {
-            getCodeListener?.invoke(holder.counrty.text.toString(),holder.phone_code.text.toString())
+            getCodeListener?.invoke(holder.country.text.toString(),holder.phone_code.text.toString())
         }
 
     }
 }
 
 class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
-    val counrty = view.country
+    val country = view.country
     val phone_code = view.phone_code
     val item_container = view.item_container
 
+
+
 }
+

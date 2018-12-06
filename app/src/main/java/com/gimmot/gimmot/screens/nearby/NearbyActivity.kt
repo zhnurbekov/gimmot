@@ -6,16 +6,20 @@ import com.gimmot.gimmot.BaseActivity
 import com.gimmot.gimmot.R
 import com.gimmot.gimmot.SpacesItemDecoration
 import com.gimmot.gimmot.adapter.NearbyAdapter
+import com.gimmot.gimmot.screens.common.setupAuthGuard
+import com.gimmot.gimmot.screens.common.setupBottomNavigation
 import kotlinx.android.synthetic.main.activity_nearby.*
 
 
-class NearbyActivity : BaseActivity(0) {
+class NearbyActivity : BaseActivity() {
     private val TAG = "NearbyActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nearby)
-        setupBottomNavigation()
+        setupAuthGuard { uid ->
+            setupBottomNavigation(uid, 0)
+        }
 
         var list = ArrayList<String>()
         list.add("Индира")
