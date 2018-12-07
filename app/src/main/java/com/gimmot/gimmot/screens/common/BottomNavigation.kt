@@ -1,6 +1,8 @@
 package com.gimmot.gimmot.screens.common
 
+import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
+import android.arch.lifecycle.OnLifecycleEvent
 import android.content.Intent
 import android.support.v4.content.ContextCompat.startActivity
 import com.gimmot.gimmot.BaseActivity
@@ -17,6 +19,10 @@ class BottomNavigation(private val bnv: BottomNavigationViewEx,
                        private val navNumber: Int,
                        private val activity: BaseActivity): LifecycleObserver {
 
+    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
+    fun onCreate() {
+       init()
+    }
 
     fun init() {
        bnv.setIconSize(25f, 25f)

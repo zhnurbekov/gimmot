@@ -1,6 +1,7 @@
 package com.gimmot.gimmot.screens.login
 
 import android.annotation.SuppressLint
+import android.opengl.Visibility
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
@@ -9,11 +10,12 @@ import com.gimmot.gimmot.BaseActivity
 import com.gimmot.gimmot.R
 import com.gimmot.gimmot.screens.common.setupAuthGuard
 import com.gimmot.gimmot.screens.common.setupBottomNavigation
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : BaseActivity() {
 
-     lateinit var mViewModel: LoginViewModel
+    lateinit var mViewModel: LoginViewModel
 
 
     @SuppressLint("ResourceAsColor")
@@ -27,6 +29,14 @@ class LoginActivity : BaseActivity() {
             supportFragmentManager.beginTransaction().add(R.id.frame_layout, RegistrationFragment())
                     .addToBackStack(null)
                     .commit()
+        }
+    }
+
+    public fun showProgressBar(show: Boolean) {
+        if(show){
+            progressbar.visibility = View.VISIBLE
+        }else{
+            progressbar.visibility = View.GONE
         }
     }
 
