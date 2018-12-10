@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.arch.lifecycle.Observer
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.ConnectivityManager
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -14,11 +15,9 @@ import android.view.*
 import android.widget.EditText
 import android.widget.TextView
 import com.gimmot.gimmot.R
-import com.gimmot.gimmot.data.auth
 import com.gimmot.gimmot.model.Country
 import com.gimmot.gimmot.screens.nearby.NearbyActivity
 import com.gimmot.gimmot.utils.showToast
-import com.google.android.gms.tasks.Task
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import java.util.concurrent.TimeUnit
@@ -63,14 +62,13 @@ class RegistrationFragment : Fragment() {
             }
         }
 
-       /* next_btn.setOnClickListener {
+        next_btn.setOnClickListener {
             if (mCodeCountry.text.isNotEmpty() && mPhoneNumber.text.isNotEmpty() && mSmsCode.text.isNotEmpty()) {
                 signIn(PhoneAuthProvider.getCredential(verificationId, mSmsCode.text.toString()))
             } else {
                 activity?.showToast(getString(R.string.not_all_fields_filled))
             }
         }
-*/
 
         mLoginActivity.mViewModel.goToMainScreen.observe(this, Observer {
             activity?.showToast("Logged in Successfully :)")
@@ -79,8 +77,6 @@ class RegistrationFragment : Fragment() {
 
         mCountry.setOnClickListener {showCountryDialog()}
     }
-
-
 
 
     private fun signIn(credential: PhoneAuthCredential) {
@@ -138,6 +134,7 @@ class RegistrationFragment : Fragment() {
         countryPhoneCodeAdapter.getCodeListener = { country, code ->
             mCodeCountry.text = code
             mCountry.text = country
+            mCountry.setTextColor(Color.BLACK)
             dialog.dismiss()
         }
         })

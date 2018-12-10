@@ -7,8 +7,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.PhoneAuthCredential
 
 
-interface AuthManager {
+interface NearbyRepository {
 
-    fun signIn(credential: PhoneAuthCredential): Task<AuthResult>
-
+    fun getCountries(): LiveData<List<Country?>>
 }

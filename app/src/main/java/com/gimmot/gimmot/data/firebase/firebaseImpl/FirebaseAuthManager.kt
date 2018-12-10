@@ -1,4 +1,4 @@
-package com.gimmot.gimmot.data.firebase.common.farebase
+package com.gimmot.gimmot.data.firebase.firebaseImpl
 
 import android.arch.lifecycle.LiveData
 import com.gimmot.gimmot.data.firebase.AuthManager
@@ -18,9 +18,7 @@ class FirebaseAuthManager : AuthManager {
             auth.signInWithCredential(credential)
 
 
-    override fun getCountries(): LiveData<List<Country?>> =
-            database.child(country).liveData().map {
-                it.children.map{it.getValue(Country::class.java!!)} }
+
 
 
 }

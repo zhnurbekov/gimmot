@@ -1,7 +1,7 @@
 package com.gimmot.gimmot
 
 import android.app.Application
-import com.gimmot.gimmot.data.firebase.common.farebase.FirebaseAuthManager
+import com.gimmot.gimmot.data.firebase.firebaseImpl.FirebaseAuthManager
 
 
 class App : Application() {
