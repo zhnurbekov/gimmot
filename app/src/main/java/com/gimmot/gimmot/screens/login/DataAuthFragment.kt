@@ -46,7 +46,7 @@ class DataAuthFragment : Fragment() {
         }
 
         next_btn.setOnClickListener {
-            var user = com.gimmot.gimmot.model.User(name = name.text.toString(),borthDate = cal.time)
+            var user = com.gimmot.gimmot.model.User(name = name.text.toString(),birth_date = cal.time)
             mLoginActivity.mViewModel.creatUser(user, uid!!)
         }
     }

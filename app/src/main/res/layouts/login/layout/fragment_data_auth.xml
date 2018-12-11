@@ -11,7 +11,9 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="50dp"
-        android:src="@mipmap/profil"
+        android:src="@mipmap/ic_add_photo"
+        app:civ_border_width="0.5dp"
+        app:civ_border_color="@color/hind"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,6 +37,7 @@
         android:fontFamily="@font/pfbeausanspro_reg"
         android:hint="Введите дату рождения"
         android:layout_margin="20dp"
+        android:focusable="false"
         app:layout_constraintTop_toBottomOf="@+id/name"/>
 
     <TextView
