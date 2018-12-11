@@ -26,13 +26,13 @@ class LoginActivity : BaseActivity() {
             mViewModel = initViewModel()
         }
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().add(R.id.frame_layout, RegistrationFragment())
+            supportFragmentManager.beginTransaction().add(R.id.frame_layout, DataAuthFragment())
                     .addToBackStack(null)
                     .commit()
         }
     }
 
-    public fun showProgressBar(show: Boolean) {
+     fun showProgressBar(show: Boolean) {
         if(show){
             progressbar.visibility = View.VISIBLE
         }else{

@@ -10,5 +10,6 @@ import com.google.firebase.database.FirebaseDatabase
 val auth: FirebaseAuth = FirebaseAuth.getInstance()
 val database: DatabaseReference = FirebaseDatabase.getInstance().reference
 fun DatabaseReference.liveData(): LiveData<DataSnapshot> = FirebaseLiveData(this)
+val uid  = FirebaseAuth.getInstance().currentUser?.uid
 
 

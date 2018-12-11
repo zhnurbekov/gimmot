@@ -5,4 +5,5 @@
     <string name="my_adds">мои записи</string>
     <string name="choose_country">Выберите страну</string>
     <string name="not_all_fields_filled">Не все поля заполнены</string>
+    <string name="wrong_data_format">Введен неправильный формат данных</string>
 </resources>

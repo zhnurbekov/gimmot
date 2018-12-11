@@ -1,9 +1,7 @@
 package com.gimmot.gimmot.screens.nearby
 
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.widget.Toast
 import android.widget.AdapterView
 import android.text.Editable
@@ -28,15 +26,12 @@ class ChooseCountryActivity : BaseActivity() {
 
         //SEARCHBAR TEXT CHANGE LISTENER
         searchBar.addTextChangeListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-            }
-
+            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
                 adapter.getFilter().filter(charSequence)
             }
 
-            override fun afterTextChanged(editable: Editable) {
-            }
+            override fun afterTextChanged(editable: Editable) {}
         })
 
         //LISTVIEW ITEM CLICKED

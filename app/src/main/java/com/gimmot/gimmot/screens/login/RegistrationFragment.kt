@@ -63,16 +63,23 @@ class RegistrationFragment : Fragment() {
         }
 
         next_btn.setOnClickListener {
-            if (mCodeCountry.text.isNotEmpty() && mPhoneNumber.text.isNotEmpty() && mSmsCode.text.isNotEmpty()) {
+            if (mCodeCountry.text.isNotEmpty() && mPhoneNumber.text.isNotEmpty()
+                    && mSmsCode.text.isNotEmpty() && verificationId.isNotEmpty()) {
                 signIn(PhoneAuthProvider.getCredential(verificationId, mSmsCode.text.toString()))
             } else {
-                activity?.showToast(getString(R.string.not_all_fields_filled))
+                if (verificationId.isEmpty()){
+                    activity?.showToast(getString(R.string.wrong_data_format))
+                }else{
+                    activity?.showToast(getString(R.string.not_all_fields_filled))
+                }
             }
         }
 
         mLoginActivity.mViewModel.goToMainScreen.observe(this, Observer {
             activity?.showToast("Logged in Successfully :)")
-            startActivity(Intent(activity, NearbyActivity::class.java))
+            activity!!.supportFragmentManager.beginTransaction().add(R.id.frame_layout, DataAuthFragment())
+                    .addToBackStack(null)
+                    .commit()
         })
 
         mCountry.setOnClickListener {showCountryDialog()}
@@ -102,7 +109,7 @@ class RegistrationFragment : Fragment() {
             }
 
             override fun onVerificationFailed(p0: FirebaseException?) {
-                activity?.showToast("Введен неправильный формат данных")
+                activity?.showToast(getString(R.string.wrong_data_format))
                 mLoginActivity.showProgressBar(false)
             }
 

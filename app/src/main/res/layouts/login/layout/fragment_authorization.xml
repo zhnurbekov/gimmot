@@ -6,49 +6,10 @@
     android:layout_height="match_parent">
 
 
-    <!--<android.support.v7.widget.Toolbar
-        android:id="@+id/auth_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/colorPrimary"
-        app:contentInsetStart="0dp"
-        app:layout_constraintTop_toTopOf="parent">
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="Регистрация"
-                android:textColor="@color/white"
-                android:fontFamily="@font/pfbeausanspro_bold"
-                android:textSize="15sp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <TextView
-                android:id="@+id/next_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Далее"
-                android:layout_marginRight="15dp"
-                android:fontFamily="@font/pfbeausanspro_bold"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v7.widget.Toolbar>-->
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="200dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:src="@mipmap/logo"
@@ -61,9 +22,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo">
@@ -74,7 +35,6 @@
             android:layout_height="50dp"
             android:fontFamily="@font/pfbeausanspro_reg"
             android:gravity="center"
-            android:paddingLeft="10dp"
             android:text="@string/choose_country"
             android:textAlignment="textStart"
             android:textSize="18dp"
@@ -87,15 +47,12 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/hind"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             app:layout_constraintTop_toBottomOf="@+id/country_name"/>
 
         <LinearLayout
             android:id="@+id/phone_number_container"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="30dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/country_name">
 
@@ -104,7 +61,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/pfbeausanspro_reg"
                 android:minWidth="50dp"
@@ -113,20 +69,19 @@
             <View
                 android:layout_width="0.5dp"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:background="@color/hind" />
 
             <EditText
                 android:id="@+id/phone_number"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
                 android:backgroundTint="@color/transparent"
                 android:hint="Введите номер телефона"
                 android:inputType="number"
-                android:textSize="18dp" />
+                android:textSize="18dp"/>
 
 
         </LinearLayout>
@@ -135,17 +90,15 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/hind"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
             app:layout_constraintTop_toBottomOf="@+id/phone_number_container"/>
 
         <EditText
             android:id="@+id/sms_code"
             android:layout_width="140dp"
             android:layout_height="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="@font/pfbeausanspro_reg"
-            android:gravity="center"
+            android:gravity="left"
             android:hint="Введите код"
             android:textColor="@color/black"
             android:inputType="number"
@@ -154,22 +107,7 @@
             android:minWidth="80dp"
             android:textSize="18dp"
             app:layout_constraintTop_toBottomOf="@id/phone_number_container" />
-<!--
 
-        <TextView
-            android:id="@+id/get_sms_code_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/pfbeausanspro_bold"
-            android:text="Получить код"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="@+id/sms_code"
-            app:layout_constraintStart_toEndOf="@+id/sms_code"
-            app:layout_constraintTop_toTopOf="@+id/sms_code" />
--->
 
 
          <Button
