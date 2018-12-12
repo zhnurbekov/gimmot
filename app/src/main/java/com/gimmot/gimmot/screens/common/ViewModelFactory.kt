@@ -14,9 +14,10 @@ class ViewModelFactory(private val app: App,
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         val authManager = app.authManager
         val nearbyRepository = app.nearbyRepository
+        val userRepository = app.userRepository
 
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
-            return LoginViewModel(authManager,nearbyRepository,onFailureListener) as T
+            return LoginViewModel(authManager,userRepository,onFailureListener) as T
         } else {
             error("Unknown view model class $modelClass")
         }

@@ -11,7 +11,5 @@ import com.gimmot.gimmot.screens.common.map
 
 class FirebaseNearbyRepository : NearbyRepository{
 
-    override fun getCountries(): LiveData<List<Country?>> =
-            database.child(country).liveData().map {
-                it.children.map{it.getValue(Country::class.java!!)} }
+
 }

@@ -11,6 +11,9 @@ import com.gimmot.gimmot.R
 import com.gimmot.gimmot.screens.common.setupAuthGuard
 import com.gimmot.gimmot.screens.common.setupBottomNavigation
 import kotlinx.android.synthetic.main.activity_login.*
+import android.content.Intent
+
+
 
 
 class LoginActivity : BaseActivity() {
@@ -40,4 +43,10 @@ class LoginActivity : BaseActivity() {
         }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        for (fragment in supportFragmentManager.fragments) {
+            fragment.onActivityResult(requestCode, resultCode, data)
+        }
+    }
 }

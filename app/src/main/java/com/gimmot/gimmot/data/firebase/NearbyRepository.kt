@@ -9,5 +9,4 @@ import com.google.firebase.auth.PhoneAuthCredential
 
 interface NearbyRepository {
 
-    fun getCountries(): LiveData<List<Country?>>
 }
