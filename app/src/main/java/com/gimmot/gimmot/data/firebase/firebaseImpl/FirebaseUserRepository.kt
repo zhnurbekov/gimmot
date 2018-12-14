@@ -30,7 +30,7 @@ class FirebaseUserRepository : UserRepository{
             }
 
     private fun DataSnapshot.asUser(): User? =
-            getValue(User::class.java)?.copy(uid = key!!)
+            getValue(User::class.java)
 
 
     override fun getCountries(): LiveData<List<Country?>> =

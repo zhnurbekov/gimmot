@@ -32,6 +32,7 @@ android {
                             'src/main/res/layouts/menus',
                             'src/main/res/layouts/others',
                             'src/main/res/layouts/login',
+                            'src/main/res/layouts/profil',
                             'src/main/res'
                     ]
         }
@@ -69,6 +70,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.0.5'
     implementation 'com.google.firebase:firebase-database:16.0.5'
     implementation 'com.google.firebase:firebase-storage:16.0.5'
+    //Image slider
+    implementation ('com.github.JakeWharton:ViewPagerIndicator:2.4.1')  {
+        exclude group: 'com.android.support'
+        exclude module: 'appcompat-v7'
+        exclude module: 'support-v4'
+    }
 
 }
 apply plugin: 'com.google.gms.google-services'

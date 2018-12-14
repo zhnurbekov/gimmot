@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.gimmot.gimmot.utils.VerticalViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:scrollIndicators="right"/>
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:foregroundGravity="right"
+            android:layout_centerHorizontal="false"
+            android:padding="10dip"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:layout_alignRight="@id/pager"
+            app:centered="false"
+            app:fillColor="@color/colorPrimary"
+            app:pageColor="#fff"/>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
