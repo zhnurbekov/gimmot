@@ -1,6 +1,5 @@
 package com.gimmot.gimmot.profil
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.view.ViewPager
@@ -12,6 +11,7 @@ import kotlinx.android.synthetic.main.activity_profil.*
 import java.util.*
 import android.os.Build
 import android.support.annotation.RequiresApi
+import android.support.v4.content.ContextCompat
 
 
 class ProfilActivity : BaseActivity() {
@@ -20,7 +20,6 @@ class ProfilActivity : BaseActivity() {
 
     private val myImageList = intArrayOf(R.mipmap.logo, R.mipmap.profil, R.mipmap.ic_add_photo,  R.mipmap.profil,  R.mipmap.profil,  R.mipmap.profil)
 
-    @SuppressLint("ResourceAsColor")
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,20 +28,11 @@ class ProfilActivity : BaseActivity() {
         imageModelArrayList = populateList()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             val w = window // in Activity's onCreate() for instance
+            window.setStatusBarColor(ContextCompat.getColor(this,R.color.white));
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
 
-
-// clear FLAG_TRANSLUCENT_STATUS flag:
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-
-// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-
-// finally change the color
-            window.statusBarColor = R.color.white;
-           // getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         }
-       // getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         init()
 
     }
