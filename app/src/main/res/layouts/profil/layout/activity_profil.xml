@@ -89,6 +89,7 @@
                 app:layout_constraintTop_toTopOf="@+id/is_online"  />
 
 
+
             <TextView
                 android:id="@+id/loc_dictance"
                 android:layout_width="wrap_content"
