@@ -1,12 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:clipToPadding="false"
+    android:background="@color/white"
+    android:fitsSystemWindows="true">
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/ic_back_btn_white"
+        app:backgroundTint="@color/hind"
+        app:borderWidth="0dp"
+        app:elevation="6in"
+        app:fabSize="mini"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
+        android:id="@+id/profile_image_layout"
         android:layout_width="fill_parent"
         android:layout_height="400dp"
         app:layout_constraintTop_toTopOf="parent">
@@ -16,21 +32,205 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_alignParentTop="true"
-            android:scrollIndicators="right"/>
+            android:scrollIndicators="right" />
 
         <com.viewpagerindicator.CirclePageIndicator
             android:id="@+id/indicator"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:foregroundGravity="right"
-            android:layout_centerHorizontal="false"
-            android:padding="10dip"
-            android:layout_marginTop="15dp"
-            android:orientation="vertical"
             android:layout_alignRight="@id/pager"
+            android:layout_centerHorizontal="false"
+            android:layout_marginTop="30dp"
+            android:foregroundGravity="right"
+            android:orientation="vertical"
+            android:padding="10dip"
             app:centered="false"
-            app:fillColor="@color/colorPrimary"
-            app:pageColor="#fff"/>
+            app:fillColor="@color/hind"
+            app:pageColor="#fff" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/profil_background_gradient">
+
+            <ImageView
+                android:id="@+id/is_online"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_online"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/pfbeausanspro_bold"
+                android:text="Айнур , 26 "
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/is_online"
+                app:layout_constraintStart_toEndOf="@+id/is_online"
+                app:layout_constraintTop_toTopOf="@+id/is_online" />
+
+            <ImageView
+                android:id="@+id/ic_loc"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/ic_location_white_point"
+                app:layout_constraintBottom_toBottomOf="@+id/is_online"
+                app:layout_constraintEnd_toStartOf="@+id/loc_dictance"
+                app:layout_constraintTop_toTopOf="@+id/is_online"  />
+
+            <TextView
+                android:id="@+id/loc_dictance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/pfbeausanspro_bold"
+                android:text="1,2 км"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/is_online"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/is_online" />
+
+        </android.support.constraint.ConstraintLayout>
     </RelativeLayout>
+
+    <ImageView
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/ic_favorite_not_active"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image_layout" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image_layout" >
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/pfbeausanspro_bold"
+            android:text="Город : "
+            android:textColor="@color/hind"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pfbeausanspro_reg"
+            android:text="Астана"
+            android:textColor="@color/hind"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@+id/country"
+            app:layout_constraintBottom_toBottomOf="@+id/country"
+            app:layout_constraintStart_toEndOf="@+id/country" />
+
+
+        <TextView
+            android:id="@+id/appearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pfbeausanspro_bold"
+            android:text="Внешность : "
+            android:textColor="@color/hind"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/country" />
+
+        <TextView
+            android:id="@+id/appearance_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pfbeausanspro_reg"
+            android:text="Азиат, 179см, 79кг, Худое"
+            android:textColor="@color/hind"
+            android:inputType="textMultiLine"
+            android:ems="12"
+            android:textSize="14sp"
+            android:lineSpacingExtra="5dp"
+            app:layout_constraintTop_toTopOf="@+id/appearance"
+            app:layout_constraintBottom_toBottomOf="@+id/appearance"
+            app:layout_constraintStart_toEndOf="@+id/appearance"/>
+
+        <TextView
+            android:id="@+id/search_to_for"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pfbeausanspro_bold"
+            android:text="Ищу для : "
+            android:textColor="@color/hind"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appearance_desc" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pfbeausanspro_reg"
+            android:text="для серьезных отношений"
+            android:textColor="@color/hind"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@+id/search_to_for"
+            app:layout_constraintStart_toEndOf="@+id/search_to_for"
+            app:layout_constraintBottom_toBottomOf="@+id/search_to_for" />
+
+        <TextView
+            android:id="@+id/family_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/pfbeausanspro_bold"
+            android:text="Семейное положение : "
+            android:textColor="@color/hind"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_to_for" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pfbeausanspro_reg"
+            android:text="свободен"
+            android:textColor="@color/hind"
+            android:textSize="14sp"
+            app:layout_constraintTop_toTopOf="@+id/family_status"
+            app:layout_constraintStart_toEndOf="@+id/family_status"
+            app:layout_constraintBottom_toBottomOf="@+id/family_status" />
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/new_ad_btn"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|end"
+        android:src="@drawable/ic_write_message"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:borderWidth="0dp"
+        app:elevation="6dp"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -17,14 +17,14 @@ class NearbyAdapter (val items : ArrayList<String>, val context: Context) : Recy
     }
 
     // Inflates the item views
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.item_nearby, parent, false))
     }
 
     // Binds each animal in the ArrayList to a view
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         System.out.print("")
-        holder?.tvAnimalType?.text = items.get(position)
+        holder.tvAnimalType?.text = items.get(position)
     }
 }
 

@@ -12,6 +12,11 @@ import java.util.*
 import android.os.Build
 import android.support.annotation.RequiresApi
 import android.support.v4.content.ContextCompat
+import android.view.ViewGroup
+import android.support.v4.view.ViewCompat
+import android.support.v4.view.ViewCompat.setOnApplyWindowInsetsListener
+import android.view.View
+import kotlinx.android.synthetic.main.activity_new_ad.*
 
 
 class ProfilActivity : BaseActivity() {
@@ -28,11 +33,9 @@ class ProfilActivity : BaseActivity() {
         imageModelArrayList = populateList()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             val w = window // in Activity's onCreate() for instance
-            window.setStatusBarColor(ContextCompat.getColor(this,R.color.white));
+            window.setStatusBarColor(ContextCompat.getColor(this,R.color.black));
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
-
         }
-
         init()
 
     }
@@ -58,7 +61,7 @@ class ProfilActivity : BaseActivity() {
         val density = resources.displayMetrics.density
 
         //Set circle indicator radius
-        indicator.setRadius(4 * density)
+        indicator.setRadius(5 * density)
 
         NUM_PAGES = imageModelArrayList!!.size
 

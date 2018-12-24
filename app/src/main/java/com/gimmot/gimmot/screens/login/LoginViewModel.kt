@@ -22,7 +22,7 @@ class LoginViewModel(private val authManager: AuthManager,
     private val _goToMainScreen = SingleLiveEvent<Unit>()
     val goToMainScreen: LiveData<Unit> = _goToMainScreen
     val country = userRepository.getCountries()
-    val user: LiveData<User> = userRepository.getUser()
+//    val user: LiveData<User> = userRepository.getUser()
 
 
     fun onLoginClick(credential: PhoneAuthCredential) {

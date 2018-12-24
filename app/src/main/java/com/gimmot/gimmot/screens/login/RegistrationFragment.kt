@@ -77,9 +77,10 @@ class RegistrationFragment : Fragment() {
 
         mLoginActivity.mViewModel.goToMainScreen.observe(this, Observer {
             activity?.showToast("Logged in Successfully :)")
-            activity!!.supportFragmentManager.beginTransaction().add(R.id.frame_layout, DataAuthFragment())
+            activity!!.supportFragmentManager.beginTransaction().replace(R.id.frame_layout, DataAuthFragment())
                     .addToBackStack(null)
                     .commit()
+            mLoginActivity.showProgressBar(false)
         })
 
         mCountry.setOnClickListener {showCountryDialog()}

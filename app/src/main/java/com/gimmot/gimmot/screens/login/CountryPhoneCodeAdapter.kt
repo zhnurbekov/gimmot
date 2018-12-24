@@ -20,14 +20,14 @@ class CountryPhoneCodeAdapter (val items : List<Country>, val context: Context) 
         return items.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.country_list_item, parent, false))
     }
 
-    override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
-        holder?.country?.text = items.get(position).name
-        holder?.phone_code?.text = items.get(position).code
-        holder!!.item_container.setOnClickListener {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.country?.text = items[position].name
+        holder.phone_code?.text = items[position].code
+        holder.item_container.setOnClickListener {
             getCodeListener?.invoke(holder.country.text.toString(),holder.phone_code.text.toString())
         }
 

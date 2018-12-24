@@ -3,6 +3,7 @@ package com.gimmot.gimmot.screens.login
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v4.app.Fragment
@@ -17,6 +18,7 @@ import com.gimmot.gimmot.model.User
 import com.gimmot.gimmot.screens.common.CameraHelper
 import com.gimmot.gimmot.utils.rotateBitmap
 import kotlinx.android.synthetic.main.fragment_data_auth.*
+import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -66,7 +68,11 @@ class DataAuthFragment : Fragment() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == mCamera.REQUEST_CODE && resultCode == AppCompatActivity.RESULT_OK) {
             val bitmap = MediaStore.Images.Media.getBitmap(mLoginActivity.contentResolver, mCamera.imageUri)
-            logo.setImageBitmap( rotateBitmap(bitmap,-90f))
+            //logo.setImageBitmap( rotateBitmap(bitmap,-90f))
+           /* UCrop.of(mCamera.imageUri!!, Uri.fromFile(File(mLoginActivity.cacheDir,"imageCrop.jpg")))
+                    .withAspectRatio(16F, 9F)
+                    .withMaxResultSize(450, 450)
+                    .start(mLoginActivity);*/
         }
         if (requestCode == mCamera.GALLERY && data != null) {
             val bitmap = MediaStore.Images.Media.getBitmap(mLoginActivity.contentResolver, data.data)
